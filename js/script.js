@@ -27,7 +27,7 @@ const mouseLeaveHandler = event => {
 const setColor = (elementId) => {
     let previousColor;
     let currentColor;
-    if (Object.keys(colorStorage).includes(elementId)){
+    if (elementId in colorStorage){
         previousColor = colorStorage[elementId];
         currentColor = setDarkerColor(previousColor);
         colorStorage[elementId] = currentColor;
