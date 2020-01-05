@@ -4,7 +4,7 @@ const button = document.querySelector('#size-input');
 const initial_size = 16;
 const colorStorage = {};
 
-button.addEventListener("click", (event) => {
+button.addEventListener("click", () => {
     let size = +prompt("Задайте размер сетки");
     redrawGrid(size, size);
 });
@@ -24,7 +24,7 @@ const mouseLeaveHandler = event => {
     event.target.style.background = '';
 };
 
-const setColor = (elementId) => {
+const setColor = elementId => {
     let previousColor;
     let currentColor;
     if (elementId in colorStorage){
@@ -39,8 +39,8 @@ const setColor = (elementId) => {
 };
 
 const setDarkerColor = color => {
-    let [hue, saturate, lightness] = color;
-    let currentLightness = lightness - 10 > 0? lightness - 10: 0;
+    const [hue, saturate, lightness] = color;
+    const currentLightness = lightness - 10 > 0? lightness - 10: 0;
     return [hue, saturate, currentLightness];
 };
 
